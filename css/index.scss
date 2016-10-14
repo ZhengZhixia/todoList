@@ -1,0 +1,154 @@
+@font-face {
+  font-family: 'iconfont';
+  src: url('../fonts/iconfont.woff');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+}
+
+.icon-shanchu:before {
+  content: "\e64b";
+}
+
+.icon-wancheng:before {
+  content: "\e643";
+}
+
+.icon-jindu:before {
+  content: "\e60b";
+}
+
+@mixin useRem($design-size) {
+  $device-size-list: $design-size, 414px, 412px, 380px, 375px, 360px, 320px;
+  @each $size in $device-size-list {
+    @media screen and (max-width: #{$size}) {
+      html {
+        font-size: 100px * $size/$design-size;
+      }
+    }
+  }
+}
+
+@include useRem(720px);
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  width: 100%;
+  height: 1.84rem;
+  background: #21a9d9;
+  .logo {
+    width: 0.92rem;
+    height: 0.92rem;
+    background: url('../images/1.png');
+    background-size: cover;
+    float: left;
+  }
+  .right {
+    width: 2.74rem;
+    height: 0.86rem;
+    float: right;
+    box-sizing: border-box;
+    padding: 0.26rem 0.34rem 0 0;
+    > div {
+      width: 0.59rem;
+      height: 0.59rem;
+      float: left;
+      background-size: cover;
+      color:#fff;
+      font-size: 0.55rem;
+    }
+    .add {
+      margin-right: 0.315rem;
+      background-image: url(../images/add.png);
+    }
+    .delete {
+      margin-right: 0.315rem;
+    }
+  }
+}
+.lists{
+  overflow: hidden;
+}
+.list {
+  color: #fff;
+  width: 100%;
+  height: 1.4rem;
+  overflow: hidden;
+  background: #5257a8;
+  border-bottom: 1px solid #fff;
+  .list-left {
+    font-size: 35px;
+    font-weight: 100;
+  }
+  > div {
+    float: left;
+    width: 1.4rem;
+    height: 1.4rem;
+    text-align: center;
+    line-height: 1.4rem;
+
+    &.list-li {
+      width: 4.4rem;
+      line-height: 1.4rem;
+      position: relative;
+    }
+    &.list-li.done::after {
+      content: '';
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      background-color: #000;
+    }
+    &.list-right {
+      position: relative;
+      input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+  }
+}
+.content{
+  width:100%;
+  position: relative;
+  .content-right{
+    box-sizing: border-box;
+    padding: 0.4rem;
+    width:100%;
+    position: fixed;
+    z-index: 10;
+    top:0;
+    left:100%;
+    background: indianred;
+    overflow: hidden;
+    color:#fff;
+    div{
+      margin:0.1rem 0;
+    }
+    input{
+      margin:0.1rem 0;
+      min-width:100%;
+      background-color:indianred;
+      border:0px;
+      border-bottom: 1px solid #fff;
+      color:#fff;
+    }
+    &.play{
+      left:0;
+    }
+  }
+}
