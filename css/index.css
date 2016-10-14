@@ -1,22 +1,32 @@
 @font-face {
-  font-family: 'iconfont';
-  src: url("../fonts/iconfont.woff");
+  font-family: 'iconfont1';
+  src: url("../fonts/iconfont1.woff");
 }
 
-.iconfont {
-  font-family: "iconfont" !important;
+.iconfont1 {
+  font-family: "iconfont1" !important;
 }
 
-.icon-shanchu:before {
-  content: "\e64b";
+.icon-weiwancheng-copy:before {
+  content: "\e600";
+  font-size: 0.5rem;
 }
 
 .icon-wancheng:before {
-  content: "\e643";
+  content: "\e60f";
+  color: orangered;
 }
 
-.icon-jindu:before {
-  content: "\e60b";
+.icon-shanchuchenggong:before {
+  content: "\e655";
+}
+
+.icon-more:before {
+  content: "\e8e1";
+}
+
+.icon-tianjia:before {
+  content: "\e61e";
 }
 
 @media screen and (max-width: 720px) {
@@ -71,6 +81,8 @@ body {
   width: 100%;
   height: 1.84rem;
   background: #21a9d9;
+  position: fixed;
+  z-index: 9;
 }
 
 .header .logo {
@@ -79,6 +91,27 @@ body {
   background: url("../images/1.png");
   background-size: cover;
   float: left;
+}
+
+.header .bottom {
+  width: 100%;
+  height: 0.92;
+  position: absolute;
+  bottom: 0;
+}
+
+.header .bottom > div {
+  float: left;
+  text-align: center;
+  line-height: 0.92rem;
+  width: 2.4rem;
+  height: 0.92rem;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.header .bottom > div.plays {
+  border-bottom: 2px solid #fff;
 }
 
 .header .right {
@@ -95,20 +128,20 @@ body {
   float: left;
   background-size: cover;
   color: #fff;
-  font-size: 0.55rem;
+  font-size: 0.56rem;
+  text-align: center;
+  line-height: 0.59rem;
+  font-weight: 500;
 }
 
 .header .right .add {
   margin-right: 0.315rem;
-  background-image: url(../images/add.png);
+  font-weight: 400;
 }
 
 .header .right .delete {
+  font-size: 0.57rem;
   margin-right: 0.315rem;
-}
-
-.lists {
-  overflow: hidden;
 }
 
 .list {
@@ -198,4 +231,38 @@ body {
 
 .content .content-right.play {
   left: 0;
+}
+
+.isshow {
+  width: 100%;
+  min-height: 100vh;
+  background-color: pink;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding-top: 1.84rem;
+  display: none;
+}
+
+.isshow.nos-lists {
+  background-color: yellowgreen;
+}
+
+.isshow.yes-lists {
+  background-color: gold;
+}
+
+.isshow.show {
+  display: block;
+}
+
+.more {
+  position: fixed;
+  box-sizing: border-box;
+  padding: 0.3rem;
+  background: orangered;
+  z-index: 100;
+  bottom: 0;
+  color: #fff;
+  border-radius: 5px;
+  right: 0;
 }

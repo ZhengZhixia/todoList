@@ -1,24 +1,39 @@
-@font-face {
-  font-family: 'iconfont';
-  src: url('../fonts/iconfont.woff');
+//@font-face {
+//  font-family: 'iconfont';
+//  src: url('../fonts/iconfont.woff');
+//}
+//
+//.iconfont {
+//  font-family: "iconfont" !important;
+//}
+//
+//.icon-shanchu:before {
+//  content: "\e64b";
+//}
+//
+//.icon-wancheng:before {
+//  content: "\e643";
+//}
+//
+//.icon-jindu:before {
+//  content: "\e60b";
+//}
+@font-face{
+  font-family: 'iconfont1';
+  src: url('../fonts/iconfont1.woff');
 }
-
-.iconfont {
-  font-family: "iconfont" !important;
+.iconfont1{
+  font-family: "iconfont1" !important;
 }
-
-.icon-shanchu:before {
-  content: "\e64b";
+.icon-weiwancheng-copy:before { content: "\e600";
+font-size: 0.5rem;
 }
-
-.icon-wancheng:before {
-  content: "\e643";
+.icon-wancheng:before { content: "\e60f";
+color: orangered;
 }
-
-.icon-jindu:before {
-  content: "\e60b";
-}
-
+.icon-shanchuchenggong:before { content: "\e655"; }
+.icon-more:before { content: "\e8e1"; }
+.icon-tianjia:before { content: "\e61e"; }
 @mixin useRem($design-size) {
   $device-size-list: $design-size, 414px, 412px, 380px, 375px, 360px, 320px;
   @each $size in $device-size-list {
@@ -41,12 +56,35 @@ body {
   width: 100%;
   height: 1.84rem;
   background: #21a9d9;
+  position: fixed;
+  z-index: 9;
   .logo {
     width: 0.92rem;
     height: 0.92rem;
     background: url('../images/1.png');
     background-size: cover;
     float: left;
+  }
+  .bottom{
+    width:100%;
+    height:0.92 ;
+    position: absolute;
+    bottom: 0;
+    >div{
+      float:left;
+      text-align: center;
+      line-height: 0.92rem;
+      width:2.4rem;
+      height:0.92rem;
+      color:#fff;
+      box-sizing: border-box;
+      &.plays{
+        border-bottom: 2px solid #fff;
+      }
+
+    }
+
+
   }
   .right {
     width: 2.74rem;
@@ -60,20 +98,23 @@ body {
       float: left;
       background-size: cover;
       color:#fff;
-      font-size: 0.55rem;
+      font-size: 0.56rem;
+      text-align:center;
+      line-height: 0.59rem;
+      font-weight: 500;
     }
     .add {
       margin-right: 0.315rem;
-      background-image: url(../images/add.png);
+      font-weight: 400;
     }
     .delete {
+      font-size: 0.57rem;
       margin-right: 0.315rem;
     }
+
   }
 }
-.lists{
-  overflow: hidden;
-}
+
 .list {
   color: #fff;
   width: 100%;
@@ -151,4 +192,33 @@ body {
       left:0;
     }
   }
+}
+.isshow{
+  width:100%;
+  min-height:(100vh);
+  background-color:pink;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding-top: 1.84rem;
+  display: none;
+  &.nos-lists{
+    background-color:yellowgreen;
+  }
+  &.yes-lists{
+    background-color:gold;
+  }
+  &.show{
+    display: block;
+  }
+}
+.more{
+  position: fixed;
+  box-sizing: border-box;
+  padding: 0.3rem;
+  background: orangered;
+  z-index: 100;
+  bottom:0;
+  color: #fff;
+  border-radius: 5px;
+  right:0;
 }
